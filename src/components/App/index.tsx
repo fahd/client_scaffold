@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./index.css";
-import { TodoProps } from "../../types";
+import { TodoProps, AddToDoProps } from "../../types";
 
 const Todo: React.FC<TodoProps> = ({ task, assignee }) => {
   return (
@@ -12,7 +12,11 @@ const Todo: React.FC<TodoProps> = ({ task, assignee }) => {
   );
 };
 
-const AddTodo: React.FC = ({ newTodo, onAddTodo, updateNewTodo }) => {
+const AddTodo: React.FC<AddToDoProps> = ({
+  newTodo,
+  onAddTodo,
+  updateNewTodo,
+}) => {
   return (
     <div className="App__add-todo">
       <input

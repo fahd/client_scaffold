@@ -1,6 +1,10 @@
 export interface TodoProps {
-  assignee: String;
-  task?: String;
+  assignee: string;
+  task?: string;
 }
 
-export interface AddToDoProps {}
+export interface AddToDoProps {
+  newTodo: string;
+  onAddTodo: () => void;
+  updateNewTodo: (value: string) => void;
+}
