@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './index.css'
-import { TodoProps } from '../../../typings'
+import { TodoProp, TodoProps } from '../../../typings'
 const OFFSET = 30
+
 const Todo: React.FC<TodoProps> = (task) => {
   const {
     assignee_id,
@@ -34,10 +35,10 @@ const Todo: React.FC<TodoProps> = (task) => {
 }
 
 const Home: React.FC = () => {
-  const [todos, updateTodos] = useState<TodoProps[]>([])
-  const [selectedTodo, updateSelectedTodo] = useState<TodoProps>()
+  const [todos, updateTodos] = useState<TodoProp[]>([])
+  const [selectedTodo, updateSelectedTodo] = useState<TodoProp>()
 
-  const onSelectTodo = (todo: TodoProps) => {
+  const onSelectTodo = (todo: TodoProp) => {
     updateSelectedTodo((prev) => todo)
   }
 

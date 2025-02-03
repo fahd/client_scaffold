@@ -1,9 +1,11 @@
-export interface TodoProps {
+export interface TodoProp {
   todo_id: number
   assignee_id: number
-  assignee_name: number
+  assignee_name: string
   todo: string
   nested?: boolean
   offset: number
-  onSelectTodo: (value) => void
+}
+export interface TodoProps extends TodoProp {
+  onSelectTodo: (todo: TodoProp) => void
 }
